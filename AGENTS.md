@@ -69,7 +69,8 @@ Before considering Python work complete:
 4. Run targeted tests, then the full test suite when practical.
 5. Report which checks were run and any failures.
 
-Do not weaken linting or type-checking configuration merely to make a check pass. Fix the underlying issue whenever reasonably possible.
+Do not weaken linting or type-checking configuration merely to make a check pass. If you think that it's better to add exception to toml file - suggest it evenly.
+Fix the underlying issue whenever reasonably possible.
 
 ## Git
 
