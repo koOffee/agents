@@ -1,0 +1,27 @@
+# Локальная конфигурация Codex и MCP
+.DS_Store
+.codex/
+*.local.toml
+*.local.env
+.env
+.env.*
+!.env.example
+
+# Сертификаты, ключи и учётные данные
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.*
+
+# Локальные результаты и кэши ML
+data/
+artifacts/
+checkpoints/
+wandb/
+mlruns/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

@@ -1,0 +1,26 @@
+# Шаблон для ~/.codex/config.toml. Не копируйте в него реальные секреты.
+# Добавляйте только нужные серверы; для production используйте отдельный профиль
+# с read-only учётной записью и явным пользовательским подтверждением.
+
+# Streamable HTTP MCP. Задайте URL вручную и храните токен только в переменной окружения.
+#[mcp_servers.example_http]
+#url = "https://mcp.example.invalid/mcp"
+#bearer_token_env_var = "CODEX_MCP_EXAMPLE_TOKEN"
+
+# Локальный stdio MCP. Замените команду и аргументы на утверждённый локальный сервер.
+#[mcp_servers.example_stdio]
+#command = "/absolute/path/to/mcp-server"
+#args = ["--read-only"]
+#env = { LOG_LEVEL = "warning" }
+
+# PostgreSQL: включайте только сервер, который гарантирует read-only роль.
+#[mcp_servers.postgres_readonly]
+#command = "/absolute/path/to/postgres-mcp-server"
+#args = ["--read-only"]
+#env = { DATABASE_URL = "postgresql://readonly:REPLACE_ME@db.example.invalid:5432/database" }
+
+# ClickHouse: включайте только сервер, который гарантирует read-only пользователя.
+#[mcp_servers.clickhouse_readonly]
+#command = "/absolute/path/to/clickhouse-mcp-server"
+#args = ["--read-only"]
+#env = { CLICKHOUSE_URL = "https://readonly:REPLACE_ME@clickhouse.example.invalid:8443/default" }
