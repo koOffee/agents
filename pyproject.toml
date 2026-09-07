@@ -1,0 +1,40 @@
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # import sorting
+    "B",      # bugbear
+    "UP",     # pyupgrade
+    "SIM",     # simplify
+    "RUF",     # Ruff-specific rules
+    "ARG",     # unused arguments
+    "PTH",     # pathlib usage
+    "T20",     # accidental print statements
+]
+ignore = [
+    "E501",    # formatter handles line length
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "S101",    # assert is appropriate in tests
+    "ARG",     # fixtures may intentionally be unused
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+docstring-code-format = true
+
+[tool.pyright]
+include = ["src", "tests"]
+exclude = ["**/__pycache__"]
+typeCheckingMode = "strict"
+pythonVersion = "3.12"
+reportMissingTypeStubs = false
